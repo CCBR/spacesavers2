@@ -9,7 +9,7 @@
 
 cd $SLURM_SUBMIT_DIR
 dt=$(date +%Y%m%d)
-SPACESAVERS2DIR="/data/CCBR_Pipeliner/bin/spacesavers2/release_v0.05"
+SPACESAVERS2DIR="/data/CCBR_Pipeliner/bin/spacesavers2/release_v0.6"
 OUTDIR="/data/CBLCCBR/kopardevn_tmp/spacesavers2_testing_CCBR_${dt}"
 
 if [ ! -d $OUTDIR ];then mkdir -p $OUTDIR;fi
