@@ -13,7 +13,8 @@ SPACESAVERS2DIR="/data/CCBR_Pipeliner/bin/spacesavers2/release_v0.6"
 OUTDIR="/data/CBLCCBR/kopardevn_tmp/spacesavers2_testing_CCBR_${dt}"
 
 if [ ! -d $OUTDIR ];then mkdir -p $OUTDIR;fi
-# ensure that python 3.11, python library xxhash and gnuparallel are in path
+# ensure that python >= 3.11 is in path and 
+# python library xxhash is installed
 # this is currently biowulf specific but can be replaced to your case
 . "/data/CCBR_Pipeliner/db/PipeDB/Conda/etc/profile.d/conda.sh"
 conda activate py311
