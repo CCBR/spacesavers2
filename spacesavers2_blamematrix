@@ -52,6 +52,7 @@ def main():
                 for folder in dfu.bm[user]:
                     if not folder in blamematrix[user]: 
                         blamematrix[user][folder]       = 0
+                    if not folder in blamematrix['allusers']:
                         blamematrix['allusers'][folder] = 0
                     blamematrix[user][folder] += dfu.bm[user][folder]
                     blamematrix['allusers'][folder] += dfu.bm[user][folder]
@@ -64,7 +65,10 @@ def main():
     for folder in folders:
         print(folder,end='')
         for user in users:
-            hrsize = get_human_readable_size(blamematrix[user][folder])
+            try:
+                hrsize = get_human_readable_size(blamematrix[user][folder])
+            except KeyError:
+                hrsize = '0'
             print("\t{}".format(hrsize),end='')
         print("")
 
