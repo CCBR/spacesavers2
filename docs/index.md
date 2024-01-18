@@ -34,3 +34,5 @@
 ## Use case
 
 One would like to monitor the per-user digital footprint on shared data drives like `/data/CCBR` on biowulf. Setting the `spacesavers2_e2e` as a weekly cronjob will allow automation of this task. `slurm_job` script is also provided to work as a template for using the job scheduler on the HPC to submit (possibly, as cronjob).
+
+View the latest report [here](report.html).
