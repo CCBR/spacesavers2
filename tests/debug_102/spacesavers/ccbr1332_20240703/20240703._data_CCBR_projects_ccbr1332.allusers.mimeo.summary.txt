@@ -1,0 +1,2 @@
+FolderPath	TotalBytes	DuplicateBytes	PercentDuplicateBytes	TotalFiles	DuplicateFiles	PercentDuplicateFiles	TotalMeanAge	DuplicateMeanAge	AgeScore	DupScore	OccScore	OverallScore
+/data/CCBR/projects/ccbr1332	11947289115648	3414681600	0.03	122284	23078	18.87	82.82	82.01	0.0108	0.0001	0.3500	63
