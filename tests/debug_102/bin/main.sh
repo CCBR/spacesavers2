@@ -7,14 +7,18 @@ OUTFILEGROUP="CCBR_Pipeliner"
 KEEPCATALOG="1"
 QUOTA=200
 
-# setup header for df.tsv
-df /data/CCBR |\
-  awk -v dir="$dir" 'NR==1{$(NF+1)="proj_dir"} NR>1{$(NF+1)=dir}1' |\
-  sed -E 's/Mounted on/Mounted_on/' |\
-  sed -E 's/ +/\t/g' |\
-  head -n 1 > df.tsv
+# check df vs du entire /data/CCBR folder
+du -s /data/CCBR
+# this returns zero??
+# 0       /data/CCBR
+df /data/CCBR
+df -h /data/CCBR
 
-# test each project dir
+# check usage of each project directory with du
+echo -e "usage\tproj_dir" > du.tsv
+du -s /data/CCBR/projects/ccbr{1332,783,984} >> du.tsv
+
+# run spacesavers on each project dir
 # CCBR projects 1332, 783, 984
 for proj in 1332 783 984; do
     # audit permissions with find
@@ -23,12 +27,6 @@ for proj in 1332 783 984; do
     stderr=log/find.${proj}.err
     find ${dir} -type f ! -perm -g=r -or -type d ! -perm -g=r > ${stdout} 2> ${stderr}
 
-    # check disk usage with df
-    df ${dir} |\
-        awk -v dir="${dir}" 'NR==1{$(NF+1)="proj_dir"} NR>1{$(NF+1)=dir}1' |\
-        sed -E 's/ +/\t/g' |\
-        tail -n 1 >> df.tsv
-    
     # setup spacesavers variables
     OUTDIR="/home/sovacoolkl/data/debug-spacesavers/spacesavers/ccbr${proj}_${DT}"
     mkdir -p $OUTDIR
@@ -58,3 +56,5 @@ for proj in 1332 783 984; do
         --wrap="bash /data/CCBR_Pipeliner/cronjobs/scripts/spacesavers2/run_spacesavers2.sh $FOLDER $OUTDIR $QUOTA $SUFFIX $DT $THREADS $OUTFILEGROUP $KEEPCATALOG"
 
 done
+
+# after jobs complete, compare results with bin/compare.R

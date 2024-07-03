@@ -52,5 +52,5 @@ dat_spacesavers <- list.files(list.dirs('spacesavers', recursive = FALSE), full.
   ) %>%
   select(FolderPath, usage_TiB_spacesavers)
 
-dat_spacesavers %>% full_join(dat_du)
+dat_spacesavers %>% full_join(dat_du) %>% kable()
 
