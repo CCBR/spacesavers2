@@ -57,6 +57,12 @@ def process_hh(
         if foldest.uid == uid or 0 == uid : user_owns_original = True
         uid_file_index = list(filter(lambda x:x!=oldest_index,uid_file_index)) # remove oldest if present in list
         inodes_already_summerized = [foldest.inode]
+        if user_owns_original:
+            fpaths = foldest.get_paths(mindepth, maxdepth)
+            for p in fpaths:
+                perfolder_summaries[p].nnondup_files += 1
+                perfolder_summaries[p].non_dup_Bytes.append(foldest.calculated_size)
+                perfolder_summaries[p].non_dup_ages.append(foldest.mtime)
         # if hashhash[h].ndup_files > 0: # we have duplicates
         if len(uid_file_index) > 0: # uid has copies
             for i in uid_file_index:
@@ -66,7 +72,7 @@ def process_hh(
                 fpaths = f.get_paths(mindepth, maxdepth)
                 if f.inode in inodes_already_summerized: # it is a hardlink
                     for p in fpaths:
-                        perfolder_summaries[p].ndup_files += 1
+                        perfolder_summaries[p].nnondup_files += 1
                 else:
                     inodes_already_summerized.append(f.inode)
                     if not parent in perfolder_dups:
@@ -76,13 +82,6 @@ def process_hh(
                         perfolder_summaries[p].ndup_files+=1
                         perfolder_summaries[p].dup_Bytes.append(f.calculated_size)
                         perfolder_summaries[p].dup_ages.append(f.mtime)
-        else: # we only have 1 original file
-            if user_owns_original:
-                fpaths = foldest.get_paths(mindepth, maxdepth)
-                for p in fpaths:
-                    perfolder_summaries[p].nnondup_files += 1
-                    perfolder_summaries[p].non_dup_Bytes.append(foldest.calculated_size)
-                    perfolder_summaries[p].non_dup_ages.append(foldest.mtime)
         out_index = []
         out_index.append(oldest_index)
         out_index.extend(uid_file_index)

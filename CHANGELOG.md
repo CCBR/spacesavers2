@@ -4,6 +4,12 @@
 
 ### Bug fixes
 
+## spacesavers2 v0.14.0
+
+- resolved #102
+
+### New features
+
 ## spacesavers2 v0.13.0
 
 ### New features
