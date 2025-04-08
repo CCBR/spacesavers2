@@ -1,6 +1,7 @@
 ## spacesavers2 development version
 
 - Add multiple versions for docs website. (#109, @kelly-sovacool)
+- Now using the readthedocs theme for the docs website. (#117, @kelly-sovacool)
 
 ## spacesavers2 v0.14.0
 
