@@ -24,11 +24,11 @@ fi
 run=1
 if [[ $ISBIOWULF == true ]];then
        . "/data/CCBR_Pipeliner/db/PipeDB/Conda/etc/profile.d/conda.sh"
-	conda activate py311
+	conda activate /data/CCBR_Pipeliner/db/PipeDB/Conda/envs/py311
 	run=0
 elif [[ $ISFRCE == true ]];then
        . "/mnt/projects/CCBR-Pipelines/resources/miniconda3/etc/profile.d/conda.sh"
-	conda activate py311
+	conda activate /data/CCBR_Pipeliner/db/PipeDB/Conda/envs/py311
 	run=0
 else
 	echo "You are NOT running on BIOWULF or on FRCE"

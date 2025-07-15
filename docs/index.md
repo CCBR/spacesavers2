@@ -17,7 +17,7 @@
 >
 > ```bash
 > . "/data/CCBR_Pipeliner/db/PipeDB/Conda/etc/profile.d/conda.sh" && \
-> conda activate py311
+> conda activate /data/CCBR_Pipeliner/db/PipeDB/Conda/envs/py311
 > ```
 
 ## Commands
