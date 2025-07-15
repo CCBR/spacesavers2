@@ -13,11 +13,20 @@
 
 > New improved parallel implementation of [`spacesavers`](https://github.com/CCBR/spacesavers). `spacesavers` is soon to be decommissioned!
 
-> Note: `spacesavers2` requires [python version 3.11](https://www.python.org/downloads/release/python-3110/) or later and the [xxhash](https://pypi.org/project/xxhash/) library. These dependencies are already installed on biowulf (as a conda env). The environment for running `spacesavers2` can get set up using:
+> Note: `spacesavers2` requires [python version 3.11](https://www.python.org/downloads/release/python-3110/) or later and the [xxhash](https://pypi.org/project/xxhash/) library. These dependencies are already installed on biowulf (as a conda env). The environment for running `spacesavers2` can get set up using the shared conda environment on biowulf or frce.
+>
+> on biowulf:
 >
 > ```bash
 > . "/data/CCBR_Pipeliner/db/PipeDB/Conda/etc/profile.d/conda.sh" && \
 > conda activate /data/CCBR_Pipeliner/db/PipeDB/Conda/envs/py311
+> ```
+>
+> on frce:
+>
+> ```bash
+> . "/mnt/projects/CCBR-Pipelines/resources/miniconda3/etc/profile.d/conda.sh" && \
+> conda activate /mnt/projects/CCBR-Pipelines/resources/miniconda3/envs/py311
 > ```
 
 ## Commands
