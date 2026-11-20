@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+if [[ $# -gt 1 ]]; then
+    printf 'Error: too many arguments. Run spacesavers2 help for usage.\n' >&2
+    exit 2
+fi
+
+case "${1:-help}" in
+    help|-h|--help)
+        cat <<'EOF'
+Usage: spacesavers2 [help|-h|--help]
+
+Available commands:
+  spacesavers2_catalog        Collect file information and hashes.
+  spacesavers2_mimeo          Find duplicate files from a catalog.
+  spacesavers2_grubbers       List large duplicate files.
+  spacesavers2_usurp          Replace duplicate files with hard links.
+  spacesavers2_e2e            Run the end-to-end workflow.
+  spacesavers2_pdq            Summarize disk usage per user.
+  spacesavers2_pdq_create_db  Create a database for pdq results.
+  spacesavers2_pdq_update_db  Add pdq results to a database.
+
+Run a command with --help for its options.
+EOF
+        ;;
+    *)
+        printf 'Error: unknown argument: %s\nRun spacesavers2 help for usage.\n' "$1" >&2
+        exit 2
+        ;;
+esac
