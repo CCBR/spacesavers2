@@ -27,12 +27,17 @@ Welcome! `spacesavers2`:
 
 ## `spacesavers2` has the following Basic commands:
 
+Run `spacesavers2 help` (or `spacesavers2 --help`) to list all available
+commands. Run any listed command with `--help` to see its options.
+
 - spacesavers2_catalog
 - spacesavers2_mimeo
 - spacesavers2_grubbers
 - spacesavers2_e2e
 - spacesavers2_usurp
 - spacesavers2_pdq
+- spacesavers2_pdq_create_db
+- spacesavers2_pdq_update_db
 
 ## `spacesavers2` typical workflow looks like this:
 

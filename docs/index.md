@@ -33,12 +33,17 @@
 
 `spacesavers2` has the following Basic commands:
 
+Run `spacesavers2 help` (or `spacesavers2 --help`) to list all available
+commands. Run any listed command with `--help` to see its options.
+
 - [spacesavers2_catalog](catalog.md)
 - [spacesavers2_mimeo](mimeo.md)
 - [spacesavers2_grubbers](grubbers.md)
 - [spacesavers2_usurp](usurp.md)
 - [spacesavers2_e2e](e2e.md)
 - [spacesavers2_pdq](pdq.md)
+- [spacesavers2_pdq_create_db](pdq_create_db.md)
+- [spacesavers2_pdq_update_db](pdq_update_db.md)
 
 ## Use case
 
