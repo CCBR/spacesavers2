@@ -18,7 +18,7 @@ options:
 <span class=w>  </span>-o<span class=w> </span>OUTFILE,<span class=w> </span>--outfile<span class=w> </span>OUTFILE
 <span class=w>                        </span>outfile<span class=w> </span>...<span class=w> </span>by<span class=w> </span>default<span class=w> </span>output<span class=w> </span>is<span class=w> </span>printed<span class=w> </span>to<span class=w> </span>screen
 <span class=w>  </span>-j<span class=w> </span>JSON,<span class=w> </span>--json<span class=w> </span>JSON<span class=w>  </span>outfile<span class=w> </span>file<span class=w> </span><span class=k>in</span><span class=w> </span>JSON<span class=w> </span>format.
-<span class=w>  </span>-v,<span class=w> </span>--version<span class=w>         </span>show<span class=w> </span>program<span class=err>&#39;</span>s<span class=w> </span>version<span class=w> </span>number<span class=w> </span>and<span class=w> </span><span class=nb>exit</span>
+<span class=w>  </span>-v,<span class=w> </span>--version<span class=w>         </span>show<span class=w> </span>program<span class=err>'</span>s<span class=w> </span>version<span class=w> </span>number<span class=w> </span>and<span class=w> </span><span class=nb>exit</span>
 
 Version:
 <span class=w>    </span>v0.11.6
@@ -29,16 +29,16 @@ user1<span class=w>       </span><span class=m>1386138</span><span class=w> </sp
 user2<span class=w>  </span><span class=m>230616</span><span class=w>  </span><span class=m>2835680212992</span>
 user3<span class=w>      </span><span class=m>1499</span><span class=w>    </span><span class=m>126442496</span>
 </code></pre></div> The 3 items in the line are as follows:</p> <table> <thead> <tr> <th>Column</th> <th>Description</th> <th>Example</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>username</td> <td>"user1"</td> </tr> <tr> <td>2</td> <td>total no. of inodes owned</td> <td>1386138</td> </tr> <tr> <td>3</td> <td>total no. of bytes occupied</td> <td>6089531321856</td> </tr> </tbody> </table> <h2 id=json-output>JSON output<a class=headerlink href=#json-output title="Permanent link">&para;</a></h2> <p>Here is an example output:</p> <div class=highlight><pre><span></span><code>{
- &quot;/path/to/some/folder   &quot;: {
-  &quot;1234&quot;: {
-   &quot;username&quot;: &quot;user1&quot;,
-   &quot;ninodes&quot;: 1267,
-   &quot;nbytes&quot;: 96084992
+ "/path/to/some/folder   ": {
+  "1234": {
+   "username": "user1",
+   "ninodes": 1267,
+   "nbytes": 96084992
   },
-  &quot;4356&quot;: {
-   &quot;username&quot;: &quot;user2&quot;,
-   &quot;ninodes&quot;: 895,
-   &quot;nbytes&quot;: 89249280
+  "4356": {
+   "username": "user2",
+   "ninodes": 895,
+   "nbytes": 89249280
   }
  }
 }
